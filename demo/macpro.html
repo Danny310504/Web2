@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacBook Pro Review - 2024 Edition</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero {
+            position: relative;
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url("/api/placeholder/1920/1080") center/cover;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .metadata {
+            background: #f8f9fa;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .rating {
+            color: #ffd700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+
+        .main-content {
+            padding-right: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .pros, .cons {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .pros h3 {
+            color: #2ecc71;
+        }
+
+        .cons h3 {
+            color: #e74c3c;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .comments {
+            margin-top: 3rem;
+        }
+
+        .comment-form {
+            margin-bottom: 2rem;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .btn {
+            background: #007aff;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+
+            .metadata {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .lazy-load.loaded {
+            opacity: 1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>MacBook Pro M3 Max (2024)</h1>
+            <p>The most powerful MacBook ever built</p>
+        </div>
+    </div>
+
+    <div class="metadata">
+        <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>4.8/5</span>
+        </div>
+        <div class="date">Published: October 27, 2024</div>
+        <div class="author">By John Smith</div>
+    </div>
+
+    <div class="container">
+        <main class="main-content">
+            <section class="section introduction">
+                <h2>Introduction</h2>
+                <p>The latest MacBook Pro with M3 Max chip redefines professional computing, offering unprecedented performance and exceptional battery life in a sleek package.</p>
+            </section>
+
+            <section class="section gallery">
+                <h2>Photo Gallery</h2>
+                <div class="gallery">
+                    <img src="m1front.jpeg" alt="MacBook Front" class="lazy-load">
+                    <img src="m1side.png" alt="MacBook Side" class="lazy-load">
+                    <img src="display.jpeg" alt="MacBook Display" class="lazy-load">
+                    <img src="keyboard.jpeg" alt="MacBook Keyboard" class="lazy-load">
+                </div>
+            </section>
+
+            <section class="section pros-cons">
+                <div class="pros">
+                    <h3><i class="fas fa-plus-circle"></i> Pros</h3>
+                    <ul>
+                        <li>Exceptional performance with M3 Max chip</li>
+                        <li>Outstanding battery life</li>
+                        <li>Stunning Liquid Retina XDR display</li>
+                        <li>Premium build quality</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h3><i class="fas fa-minus-circle"></i> Cons</h3>
+                    <ul>
+                        <li>Premium price point</li>
+                        <li>Limited port selection</li>
+                        <li>Not user upgradeable</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Display and Visual Experience</h2>
+                <p>The 14.2-inch and 16.2-inch Liquid Retina XDR displays offer incredible color accuracy, brightness, and contrast. With ProMotion technology, the screen refreshes at up to 120Hz for ultra-smooth animations.</p>
+            </section>
+
+            <section class="section">
+                <h2>Price Comparison</h2>
+                <table>
+                    <tr>
+                        <th>Model</th>
+                        <th>Price</th>
+                        <th>Best For</th>
+                    </tr>
+                    <tr>
+                        <td>14" M3 Pro</td>
+                        <td>$1,999</td>
+                        <td>Professional users</td>
+                    </tr>
+                    <tr>
+                        <td>16" M3 Max</td>
+                        <td>$2,499</td>
+                        <td>Power users</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="comments">
+                <h2>Comments</h2>
+                <form class="comment-form">
+                    <textarea placeholder="Share your thoughts..." rows="4"></textarea>
+                    <button type="submit" class="btn">Post Comment</button>
+                </form>
+                <div id="comments-list"></div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Key Specifications</h3>
+            <ul>
+                <li>Processor: M3 Max</li>
+                <li>RAM: Up to 128GB</li>
+                <li>Storage: Up to 8TB SSD</li>
+                <li>Display: 14.2" or 16.2" Liquid Retina XDR</li>
+                <li>Battery: Up to 22 hours</li>
+            </ul>
+            <button class="btn" style="margin-top: 1rem;">Check Price</button>
+        </aside>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll(".lazy-load");
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("loaded");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        });
+
+        document.querySelector(".comment-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const comment = this.querySelector("textarea").value;
+            if (comment.trim()) {
+                const commentDiv = document.createElement("div");
+                commentDiv.className = "comment";
+                commentDiv.innerHTML = `
+                    <p>${comment}</p>
+                    <small>Just now</small>
+                `;
+                document.getElementById("comments-list").prepend(commentDiv);
+                this.reset();
+            }
+        });
+
+        document.querySelectorAll("a[href^='#']").forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+</body>
+</html>

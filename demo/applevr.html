@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Vision Pro Review - TechSavvy Reviews</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Header styles from previous page */
+        .header {
+            background: #2c3e50;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        /* Article specific styles */
+        .article-container {
+            max-width: 1200px;
+            margin: 6rem auto 2rem;
+            padding: 0 2rem;
+        }
+
+        .article-hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1200/500');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+        }
+
+        .article-hero-content {
+            max-width: 800px;
+        }
+
+        .article-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .rating-large {
+            font-size: 2rem;
+            color: #f1c40f;
+        }
+
+        .article-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .main-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .main-content h2 {
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            color: #2c3e50;
+        }
+
+        .main-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .specs-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .specs-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .specs-list {
+            list-style: none;
+        }
+
+        .specs-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .pros, .cons {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .pros h3, .cons h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .pros ul, .cons ul {
+            list-style: none;
+        }
+
+        .pros li, .cons li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .pros li:before {
+            content: "✓";
+            color: #27ae60;
+            position: absolute;
+            left: 0;
+        }
+
+        .cons li:before {
+            content: "×";
+            color: #e74c3c;
+            position: absolute;
+            left: 0;
+        }
+
+        .price-comparison {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .price-item {
+            padding: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .verdict {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .verdict h2 {
+            color: white !important;
+            margin-top: 0 !important;
+        }
+
+        .comment-section {
+            margin-top: 3rem;
+        }
+
+        .comment-form {
+            margin-bottom: 2rem;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            height: 100px;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            .article-content {
+                grid-template-columns: 1fr;
+            }
+
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+
+            .article-hero h1 {
+                font-size: 2rem;
+            }
+
+            .specs-card {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">TechSavvy Reviews</div>
+            <div class="nav-menu">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Reviews</a>
+                <a href="#" class="nav-link">Comparisons</a>
+                <a href="#" class="nav-link">Buying Guides</a>
+            </div>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <div class="article-hero">
+            <div class="article-hero-content">
+                <h1>Apple Vision Pro Review</h1>
+                <p>The Future of Spatial Computing?</p>
+            </div>
+        </div>
+
+        <div class="article-meta">
+            <div class="rating-large">★★★★½</div>
+            <span>Published: June 15, 2024</span>
+            <span>By John Smith</span>
+            <span>Last Updated: June 20, 2024</span>
+        </div>
+
+        <div class="article-content">
+            <div class="main-content">
+                <h2>Introduction</h2>
+                <p>The Apple Vision Pro represents Apple's most ambitious product launch since the original iPhone. This $3,499 spatial computer aims to revolutionize how we interact with digital content, offering a blend of virtual and augmented reality in a premium package. After two weeks of intensive testing, here's our in-depth review.</p>
+
+                <h2>Design and Build Quality</h2>
+                <p>The Vision Pro showcases Apple's legendary attention to detail. The headset features a curved glass front panel, high-quality aluminum frame, and carefully engineered head strap system. While it's heavier than many competitors at 620g, the weight distribution is well-balanced.</p>
+
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h3>Pros</h3>
+                        <ul>
+                            <li>Exceptional display quality (micro-OLED)</li>
+                            <li>Intuitive eye and hand tracking</li>
+                            <li>Premium build quality</li>
+                            <li>Powerful M2 + R1 chip combination</li>
+                            <li>Seamless integration with Apple ecosystem</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h3>Cons</h3>
+                        <ul>
+                            <li>Very expensive ($3,499)</li>
+                            <li>Limited battery life (2-2.5 hours)</li>
+                            <li>Relatively heavy (620g)</li>
+                            <li>Limited app ecosystem at launch</li>
+                            <li>No AndroidPhone compatibility</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Display and Visual Experience</h2>
+                <p>The micro-OLED technology delivers stunning visual fidelity with 23 million pixels across both eyes. The color accuracy, brightness, and contrast are unmatched in the current market. The pass-through video quality sets new standards for mixed reality experiences.</p>
+
+                <div class="price-comparison">
+                    <h3>Price Comparison</h3>
+                    <div class="price-grid">
+                        <div class="price-item">
+                            <h4>Apple Store</h4>
+                            <p>$3,499</p>
+                        </div>
+                        <div class="price-item">
+                            <h4>Best Buy</h4>
+                            <p>$3,499</p>
+                        </div>
+                        <div class="price-item">
+                            <h4>Amazon</h4>
+                            <p>$3,499</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="verdict">
+                    <h2>Final Verdict</h2>
+                    <p>The Apple Vision Pro is a remarkable achievement in spatial computing, showcasing what's possible when hardware and software are thoughtfully integrated. While the price point will deter many potential buyers, it sets new standards for mixed reality experiences. For early adopters and professionals who can justify the investment, it offers a glimpse into the future of computing.</p>
+                </div>
+
+                <div class="comment-section">
+                    <h2>Comments</h2>
+                    <div class="comment-form">
+                        <textarea placeholder="Share your thoughts..."></textarea>
+                        <button class="btn">Post Comment</button>
+                    </div>
+                </div>
+            </div>
+
+            <aside>
+                <div class="specs-card">
+                    <h3 class="specs-title">Key Specifications</h3>
+                    <ul class="specs-list">
+                        <li>
+                            <span>Display</span>
+                            <span>Micro-OLED</span>
+                        </li>
+                        <li>
+                            <span>Resolution</span>
+                            <span>23M total pixels</span>
+                        </li>
+                        <li>
+                            <span>Processor</span>
+                            <span>M2 + R1 chip</span>
+                        </li>
+                        <li>
+                            <span>Battery Life</span>
+                            <span>2-2.5 hours</span>
+                        </li>
+                        <li>
+                            <span>Weight</span>
+                            <span>620g</span>
+                        </li>
+                        <li>
+                            <span>Field of View</span>
+                            <span>100+ degrees</span>
+                        </li>
+                        <li>
+                            <span>Storage</span>
+                            <span>256GB-1TB</span>
+                        </li>
+                        <li>
+                            <span>Connectivity</span>
+                            <span>Wi-Fi 6E, BT 5.3</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </article>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Comment form handling
+        const commentForm = document.querySelector('.comment-form');
+        commentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add comment handling logic here
+        });
+
+        // Lazy loading for images
+        const images = document.querySelectorAll('img');
+        const imageOptions = {
+            threshold: 0,
+            rootMargin: '0px 0px 50px 0px'
+        };
+
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                    }
+                    observer.unobserve(img);
+                }
+            });
+        }, imageOptions);
+
+        images.forEach(img => imageObserver.observe(img));
+    </script>
+</body>
+</html>
